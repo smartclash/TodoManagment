@@ -8,7 +8,11 @@ class UsersController
   end
 
   def create
-    #
+    email = params[:email]
+    password = params[:password]
+
+    user = User.create!(email: email, password: password).pretty_string
+    render plain: "A user created with these information: #{user}"
   end
 
   def show
