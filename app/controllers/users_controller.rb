@@ -1,6 +1,12 @@
-class UsersController
+class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def login
-    #
+    email = params[:email]
+    password = params[:password]
+
+    user_exists = User.where(email: email, password: password).count
+    render plain: user_exists.zero? ? 'false' : 'true'
   end
 
   def index
