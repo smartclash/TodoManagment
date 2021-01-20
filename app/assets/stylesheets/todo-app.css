@@ -83,9 +83,9 @@ body {
     margin-left: 12px;
 }
 
-.TodoItem-Overdue {
+.TodoItem-Due {
     margin: 0;
-    color: red;
+    color: #2fc393;
     margin-left: 12px;
 }
 
