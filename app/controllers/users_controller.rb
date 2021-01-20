@@ -4,7 +4,7 @@ class UsersController
   end
 
   def index
-    #
+    render plain: User.all.map {|user| user.pretty_string}.join("\n")
   end
 
   def create
