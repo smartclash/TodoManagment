@@ -16,6 +16,6 @@ class UsersController
   end
 
   def show
-    #
+    render plain: User.find(params[:id]).pretty_string
   end
 end
