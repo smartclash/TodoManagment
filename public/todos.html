@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Todo App</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="todos-app.css">
+    </head>
+    <body>
+        <h1 class="Heading">My Todo-list</h1>
+        <section class="AddTodo">
+            <input type="text" class="AddTodo-Text" placeholder="What's next?">
+            <input type="date" class="AddTodo-Date">
+            <input type="button" class="AddTodo-Add" value="Add">
+        </section>
+        <section class="TodoSection">
+            <div class="TodoSection-Heading">
+                <h3 class="TodoSection-Title">Due Today</h3>
+                <h5 class="TodoSection-Count">0/2</h5>
+            </div>
+            <ul class="TodoItems">
+                <li class="TodoItem">
+                    <label class="TodoItem-Container">
+                        <input type="checkbox" class="TodoItem-Checkbox">
+                        <p class="TodoItem-Text">Submit SaaS 201 Project</p>
+                        <p class="TodoItem-Overdue">Overdue</p>
+                        <a href="#" class="TodoItem-Delete">
+                            <img src="delete.svg" alt="Delete icon">
+                        </a>
+                    </label>
+                </li>
+                <li class="TodoItem">
+                    <label class="TodoItem-Container">
+                        <input type="checkbox" class="TodoItem-Checkbox">
+                        <p class="TodoItem-Text">Call Accountant</p>
+                        <a href="#" class="TodoItem-Delete">
+                            <img src="delete.svg" alt="Delete icon">
+                        </a>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section class="TodoSection">
+            <div class="TodoSection-Heading">
+                <h3 class="TodoSection-Title">Due Tomorrow</h3>
+                <h5 class="TodoSection-Count">0/3</h5>
+            </div>
+            <ul class="TodoItems">
+                <li class="TodoItem">
+                    <label class="TodoItem-Container">
+                        <input type="checkbox" class="TodoItem-Checkbox">
+                        <p class="TodoItem-Text">Refill Groceries</p>
+                        <a href="#" class="TodoItem-Delete">
+                            <img src="delete.svg" alt="Delete icon">
+                        </a>
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section class="TodoSection">
+            <div class="TodoSection-Heading">
+                <h3 class="TodoSection-Title">Remaining</h3>
+                <h5 class="TodoSection-Count">0/3</h5>
+            </div>
+            <ul class="TodoItems">
+                <li class="TodoItem">
+                    <label class="TodoItem-Container">
+                        <input type="checkbox" class="TodoItem-Checkbox">
+                        <p class="TodoItem-Text">Buy Medicines</p>
+                        <a href="#" class="TodoItem-Delete">
+                            <img src="delete.svg" alt="Delete icon">
+                        </a>
+                    </label>
+                </li>
+                <li class="TodoItem">
+                    <label class="TodoItem-Container">
+                        <input type="checkbox" class="TodoItem-Checkbox">
+                        <p class="TodoItem-Text">Submit LLR Documents</p>
+                        <a href="#" class="TodoItem-Delete">
+                            <img src="delete.svg" alt="Delete icon">
+                        </a>
+                    </label>
+                </li>
+                <li class="TodoItem">
+                    <label class="TodoItem-Container">
+                        <input type="checkbox" class="TodoItem-Checkbox">
+                        <p class="TodoItem-Text">Meet the CA for Tax filings</p>
+                        <a href="#" class="TodoItem-Delete">
+                            <img src="delete.svg" alt="Delete icon">
+                        </a>
+                    </label>
+                </li>
+            </ul>
+        </section>
+    </body>
+</html>

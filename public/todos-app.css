@@ -1,0 +1,100 @@
+body {
+    font-family: "Source Code Pro", Monaco, monospace;
+    max-width: 480px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.Heading {
+    padding-bottom: 20px;
+}
+
+.AddTodo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.AddTodo-Text {
+    margin-right: 12px;
+    border: 1px solid #1c1c1c;
+    padding: 12px 12px;
+    border-radius: 5px;
+}
+
+.AddTodo-Date {
+    margin-right: 12px;
+    border: 1px solid #1c1c1c;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.AddTodo-Add {
+    padding: 12px 12px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #48BB78;
+    color: #fff;
+    cursor: pointer;
+}
+
+.TodoSection {
+
+}
+
+.TodoSection-Heading {
+    display: flex;
+    align-items: center;
+}
+
+.TodoSection-Title {
+    margin-right: 10px;
+}
+
+.TodoSection-Count {
+}
+
+.TodoItems {
+    margin-top: 0;
+}
+
+.TodoItem {
+    list-style-type: none;
+    margin: 0;
+}
+
+.TodoItem-Container {
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    padding: 12px 12px;
+}
+
+.TodoItem-Container:hover {
+    background-color: lightgrey;
+}
+
+.TodoItem-Checkbox {
+    height: 16px;
+    width: 16px;
+}
+
+.TodoItem-Text {
+    margin: 0;
+    margin-left: 12px;
+}
+
+.TodoItem-Overdue {
+    margin: 0;
+    color: red;
+    margin-left: 12px;
+}
+
+.TodoItem-Delete {
+    visibility: hidden;
+    margin-left: auto;
+}
+
+.TodoItem-Container:hover .TodoItem-Delete {
+    visibility: visible;
+}
