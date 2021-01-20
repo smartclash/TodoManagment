@@ -1,8 +1,7 @@
 body {
     font-family: "Source Code Pro", Monaco, monospace;
     max-width: 480px;
-    margin: 0 auto;
-    margin-top: 60px;
+    margin: 60px auto 0 !important;
 }
 
 .Heading {
