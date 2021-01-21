@@ -13,15 +13,15 @@ class TodosController < ApplicationController
   def create
     due = Date.parse(params[:due])
     text = params[:text]
-    completed = params[:completed]
+    completed = params[:completed] || false
 
-    new_todo = Todo.create!(
+    Todo.create!(
       todo_text: text,
       due_date: due,
       completed: completed
     )
 
-    render plain: "Created a new todo with ID #{new_todo.id}"
+    redirect_back fallback_location: todos_path
   end
 
   def update
