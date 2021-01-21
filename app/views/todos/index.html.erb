@@ -1,9 +1,9 @@
 <h1 class="Heading">My Todo-list</h1>
-<section class="AddTodo">
-  <input type="text" class="AddTodo-Text" placeholder="What's next?">
-  <input type="date" class="AddTodo-Date">
-  <input type="button" class="AddTodo-Add" value="Add">
-</section>
+<form method="POST" action="<%= todos_path %>" class="AddTodo">
+  <input type="text" class="AddTodo-Text" placeholder="What's next?" name="text" required>
+  <input type="date" class="AddTodo-Date" name="due" required>
+  <input type="submit" class="AddTodo-Add" value="Add">
+</form>
 
 <%= render partial: 'todo-item', locals: {
   title: 'Overdue',
@@ -18,7 +18,7 @@
   hide_completed: false
 } %>
 <%= render partial: 'todo-item', locals: {
-  title: 'Due Tomorrow',
+  title: 'Due Later',
   todos: Todo.due_later,
   show_due: true,
   hide_completed: false
