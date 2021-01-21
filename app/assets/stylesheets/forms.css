@@ -1,0 +1,28 @@
+.AuthForm {
+    margin-top: 40px;
+}
+
+.AuthForm-Section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.AuthForm-Label {
+    margin-bottom: 10px;
+}
+
+.AuthForm-Field {
+    border: 1px solid #1c1c1c;
+    padding: 12px 12px;
+    border-radius: 5px;
+}
+
+.AuthForm-Submit {
+    padding: 12px 12px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #48BB78;
+    color: #fff;
+    cursor: pointer;
+}

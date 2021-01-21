@@ -1,0 +1,23 @@
+<h1>Welcome new user</h1>
+
+<%= form_with(url: users_path, class: 'AuthForm') do |form| %>
+  <div class="AuthForm-Section">
+    <%= form.label :first_name, 'First Name', class: 'AuthForm-Label' %>
+    <%= form.text_field :first_name, class: 'AuthForm-Field', required: true %>
+  </div>
+  <div class="AuthForm-Section">
+    <%= form.label :last_name, 'Last Name', class: 'AuthForm-Label' %>
+    <%= form.text_field :last_name, class: 'AuthForm-Field' %>
+  </div>
+  <div class="AuthForm-Section">
+    <%= form.label :email, 'Email', class: 'AuthForm-Label' %>
+    <%= form.email_field :email, class: 'AuthForm-Field', required: true %>
+  </div>
+  <div class="AuthForm-Section">
+    <%= form.label :password, 'Password', class: 'AuthForm-Label' %>
+    <%= form.password_field :password, class: 'AuthForm-Field', required: true %>
+  </div>
+  <div class="AuthForm-Section">
+    <%= form.submit 'Register', class: 'AuthForm-Submit' %>
+  </div>
+<% end %>

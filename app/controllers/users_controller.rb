@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def login
     email = params[:email]
     password = params[:password]
@@ -23,5 +21,9 @@ class UsersController < ApplicationController
 
   def show
     render plain: User.find(params[:id]).pretty_string
+  end
+
+  def new
+    render 'create'
   end
 end
