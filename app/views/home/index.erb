@@ -1,2 +1,8 @@
-<h1>This is a homepage</h1>
-<p>If you're a new user, <a href="<%= new_user_path %>">click here to sign-up</a></p>
+<h1 class="Heading">Welcome to the Todo Homepage</h1>
+
+<h3 class="Home-Authenticate--Text">
+  If you're a new user, <%= link_to 'click here to sign-up', new_user_path %>
+</h3>
+<h3 class="Home-Authenticate--Text">
+  If you're an existing user, <%= link_to 'click here to login', new_session_path %>
+</h3>

@@ -1,0 +1,15 @@
+<h1>Sign-in</h1>
+
+<%= form_with(url: users_path, class: 'AuthForm') do |form| %>
+  <div class="AuthForm-Section">
+    <%= form.label :email, 'Email', class: 'AuthForm-Label' %>
+    <%= form.email_field :email, class: 'AuthForm-Field', required: true %>
+  </div>
+  <div class="AuthForm-Section">
+    <%= form.label :password, 'Password', class: 'AuthForm-Label' %>
+    <%= form.password_field :password, class: 'AuthForm-Field', required: true %>
+  </div>
+  <div class="AuthForm-Section">
+    <%= form.submit 'Sign-in', class: 'AuthForm-Submit' %>
+  </div>
+<% end %>
