@@ -14,9 +14,11 @@ class UsersController < ApplicationController
   def create
     email = params[:email]
     password = params[:password]
+    last_name = params[:last_name]
+    first_name = params[:first_name]
 
-    user = User.create!(email: email, password: password).pretty_string
-    render plain: "A user created with these information: #{user}"
+    User.create!(email: email, first_name: first_name, last_name: last_name, password: password)
+    redirect_to home_path
   end
 
   def show
