@@ -1,15 +1,5 @@
 class UsersController < ApplicationController
-  def login
-    email = params[:email]
-    password = params[:password]
-
-    user_exists = User.where(email: email, password: password).count
-    render plain: user_exists.zero? ? 'false' : 'true'
-  end
-
-  def index
-    render plain: User.all.map {|user| user.pretty_string}.join("\n")
-  end
+  skip_before_action :ensure_user_logged_in, only: [:new, :create]
 
   def create
     email = params[:email]
@@ -19,10 +9,6 @@ class UsersController < ApplicationController
 
     User.create!(email: email, first_name: first_name, last_name: last_name, password: password)
     redirect_to home_path
-  end
-
-  def show
-    render plain: User.find(params[:id]).pretty_string
   end
 
   def new

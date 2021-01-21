@@ -16,3 +16,13 @@
 .Home-Authenticate--Text {
     font-weight: normal;
 }
+
+.Heading-Section {
+    display: flex;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.Heading-Signout {
+    margin-left: auto;
+}

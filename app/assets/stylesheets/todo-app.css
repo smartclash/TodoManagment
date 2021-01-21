@@ -4,10 +4,6 @@ body {
     margin: 60px auto 0 !important;
 }
 
-.Heading {
-    padding-bottom: 20px;
-}
-
 .AddTodo {
     display: flex;
     align-items: center;

@@ -1,4 +1,7 @@
-<h1 class="Heading">My Todo-list</h1>
+<div class="Heading-Section">
+  <h1 class="Heading"><%= @current_user.first_name %>'s Todo-list</h1>
+  <%= link_to 'Logout', session_path(@current_user.id), class: 'Heading-Signout', method: 'delete' %>
+</div>
 
 <%= form_with(url: todos_path, method: 'post', class: 'AddTodo' ) do |form| %>
   <%= form.text_field :text, {:class => 'AddTodo-Text', :placeholder => 'What\'s next?', :required => true} %>

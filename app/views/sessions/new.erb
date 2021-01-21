@@ -1,6 +1,6 @@
 <h1>Sign-in</h1>
 
-<%= form_with(url: users_path, class: 'AuthForm') do |form| %>
+<%= form_with(url: sessions_path, class: 'AuthForm') do |form| %>
   <div class="AuthForm-Section">
     <%= form.label :email, 'Email', class: 'AuthForm-Label' %>
     <%= form.email_field :email, class: 'AuthForm-Field', required: true %>
