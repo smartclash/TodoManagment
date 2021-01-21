@@ -1,9 +1,10 @@
 <h1 class="Heading">My Todo-list</h1>
-<form method="POST" action="<%= todos_path %>" class="AddTodo">
-  <input type="text" class="AddTodo-Text" placeholder="What's next?" name="text" required>
-  <input type="date" class="AddTodo-Date" name="due" required>
-  <input type="submit" class="AddTodo-Add" value="Add">
-</form>
+
+<%= form_with(url: todos_path, method: 'post', class: 'AddTodo' ) do |form| %>
+  <%= form.text_field :text, {:class => 'AddTodo-Text', :placeholder => 'What\'s next?', :required => true} %>
+  <%= form.date_field :due, {:class => 'AddTodo-Date', :required => true} %>
+  <%= form.submit 'Add', class: 'AddTodo-Add' %>
+<% end %>
 
 <%= render partial: 'todo-item', locals: {
   title: 'Overdue',
