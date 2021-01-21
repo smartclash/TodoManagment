@@ -83,6 +83,10 @@ body {
     margin-left: 12px;
 }
 
+.TodoItem-Text--Completed {
+    text-decoration: line-through;
+}
+
 .TodoItem-Due {
     margin: 0;
     color: #2fc393;

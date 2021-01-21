@@ -5,10 +5,14 @@
   </div>
   <ul class="TodoItems">
     <% todos.each do |todo| %>
+      <% next if (hide_completed && todo.completed) %>
+
       <li class="TodoItem">
         <label class="TodoItem-Container">
           <input type="checkbox" class="TodoItem-Checkbox" <%= todo.completed ? 'checked' : '' %>>
-          <p class="TodoItem-Text"><%= todo.todo_text %></p>
+          <p class="TodoItem-Text <%= todo.completed ? 'TodoItem-Text--Completed' : '' %>">
+            <%= todo.todo_text %>
+          </p>
           <% if show_due == true %>
             <p class="TodoItem-Due"><%= todo.due_date.to_s(:short) %></p>
           <% end %>

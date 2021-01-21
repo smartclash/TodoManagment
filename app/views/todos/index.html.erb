@@ -8,15 +8,18 @@
 <%= render partial: 'todo-item', locals: {
   title: 'Overdue',
   todos: Todo.overdue,
-  show_due: true
+  show_due: true,
+  hide_completed: true
 } %>
 <%= render partial: 'todo-item', locals: {
   title: 'Due Today',
   todos: Todo.due_today,
-  show_due: false
+  show_due: false,
+  hide_completed: false
 } %>
 <%= render partial: 'todo-item', locals: {
   title: 'Due Tomorrow',
   todos: Todo.due_later,
-  show_due: true
+  show_due: true,
+  hide_completed: false
 } %>
