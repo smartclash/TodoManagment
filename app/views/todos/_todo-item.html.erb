@@ -23,9 +23,9 @@
           <% if show_due == true %>
             <p class="TodoItem-Due"><%= todo.due_date.to_s(:short) %></p>
           <% end %>
-          <a href="#" class="TodoItem-Delete">
-            <img src="delete.svg" alt="Delete icon">
-          </a>
+          <%= form_with(url: todo_path(todo.id), method: 'delete', class: 'TodoItem-Delete' ) do %>
+            <input type="image" src="delete.svg" alt="Delete icon">
+          <% end %>
         </label>
       </li>
     <% end %>

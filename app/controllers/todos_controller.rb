@@ -31,4 +31,11 @@ class TodosController < ApplicationController
     Todo.update(id, completed: completed)
     redirect_back fallback_location: todos_path
   end
+
+  def destroy
+    id = params[:id]
+    Todo.destroy(id)
+
+    redirect_back fallback_location: todos_path
+  end
 end
