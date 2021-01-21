@@ -9,13 +9,12 @@
 
       <li class="TodoItem">
         <label class="TodoItem-Container">
-          <%= form_with(url: todo_path(todo.id), method: 'put' ) do %>
-            <input
-              type="checkbox"
-              name="completed"
-              class="TodoItem-Checkbox" <%= todo.completed ? 'checked' : '' %>
-              onclick="this.form.submit()"
-            >
+          <%= form_with(url: todo_path(todo.id), method: 'put' ) do |form| %>
+            <%= form.check_box :completed, {
+              :class => 'TodoItem-Checkbox',
+              :onClick => 'this.form.submit()',
+              :checked => todo.completed
+            } %>
           <% end %>
           <p class="TodoItem-Text <%= todo.completed ? 'TodoItem-Text--Completed' : '' %>">
             <%= todo.todo_text %>
@@ -24,7 +23,7 @@
             <p class="TodoItem-Due"><%= todo.due_date.to_s(:short) %></p>
           <% end %>
           <%= form_with(url: todo_path(todo.id), method: 'delete', class: 'TodoItem-Delete' ) do %>
-            <input type="image" src="delete.svg" alt="Delete icon">
+            <%= image_submit_tag('/delete.svg', alt: 'Delete icon') %>
           <% end %>
         </label>
       </li>
