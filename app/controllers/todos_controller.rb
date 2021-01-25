@@ -10,16 +10,19 @@ class TodosController < ApplicationController
   end
 
   def create
-    due = Date.parse(params[:due])
-    text = params[:text]
     completed = params[:completed] || false
 
-    Todo.create!(
-      todo_text: text,
-      due_date: due,
+    todo = Todo.new(
+      todo_text: params[:text],
+      due_date: Date.parse(params[:due]),
       completed: completed,
       user_id: current_user.id
     )
+
+    unless todo.save
+      flash[:title] = 'Oops, gotta fix some stuff'
+      flash[:error] = todo.errors.full_messages.join(', ')
+    end
 
     redirect_back fallback_location: todos_path
   end
