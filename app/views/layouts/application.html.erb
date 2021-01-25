@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>The Todo Manager App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <% if flash[:error] %>
+      <div class="Flash-Error-Container">
+        <h3 class="Flash-Error-Title"><%= flash[:title] %></h3>
+        <p class="Flash-Error-Message"><%= flash[:error] %></p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

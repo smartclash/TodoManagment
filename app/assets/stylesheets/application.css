@@ -26,3 +26,19 @@
 .Heading-Signout {
     margin-left: auto;
 }
+
+.Flash-Error-Container {
+    color: #842029;
+    padding: 20px 20px;
+    background-color: #f8d7da;
+    border-radius: 12px;
+}
+
+.Flash-Error-Title {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.Flash-Error-Message {
+    margin: 0;
+}
