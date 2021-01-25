@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
   def index
+    @todos = current_user.todos
     render 'index'
   end
 
@@ -16,7 +17,8 @@ class TodosController < ApplicationController
     Todo.create!(
       todo_text: text,
       due_date: due,
-      completed: completed
+      completed: completed,
+      user_id: current_user.id
     )
 
     redirect_back fallback_location: todos_path
@@ -26,13 +28,13 @@ class TodosController < ApplicationController
     id = params[:id]
     completed = params[:completed]
 
-    Todo.update(id, completed: completed)
+    current_user.todos.update(id, completed: completed)
     redirect_back fallback_location: todos_path
   end
 
   def destroy
     id = params[:id]
-    Todo.destroy(id)
+    current_user.todos.destroy(id)
 
     redirect_back fallback_location: todos_path
   end
