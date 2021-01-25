@@ -10,11 +10,14 @@ class SessionsController < ApplicationController
     password = params[:password]
 
     user = User.find_by(email: email)
-    if user.authenticate(password)
+
+    if user != nil && user.authenticate(password)
       session[:user_id] = user.id
       redirect_to todos_path
     else
-      render plain: 'You have entered the incorrect password'
+      flash[:title] = 'Login failed'
+      flash[:error] = 'The account details you entered were incorrect'
+      redirect_to new_session_path
     end
   end
 
